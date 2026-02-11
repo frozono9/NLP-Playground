@@ -2,6 +2,15 @@
 
 An educational IDE for learning NLP through interactive visualization and code exploration. Built for PLH Lab 1.
 
+## Screenshots
+
+### Lemmatization Example
+![Lemmatization with spaCy](images/screenshot1.png)
+
+### Word Similarity with WordNet
+![Word Similarity Analysis](images/screenshot2.png)
+
+
 ## Features
 
 ### IDE Interface
