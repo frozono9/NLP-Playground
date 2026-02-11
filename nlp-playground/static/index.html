@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NLP Playground IDE - PLH Lab 1</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+    <div class="header">
+        <h1>NLP Playground IDE</h1>
+        <p class="subtitle">Playground to experiment with NLP tasks</p>
+    </div>
+
+    <div class="main-container">
+        <!-- Left Panel: Controls and Results -->
+        <div class="left-panel">
+            <div class="controls-section">
+                <h2>Configuration</h2>
+
+                <div class="control-row">
+                    <div class="control-group">
+                        <label for="library-select">Library</label>
+                        <select id="library-select">
+                            <option value="nltk">NLTK</option>
+                            <option value="spacy">spaCy</option>
+                        </select>
+                    </div>
+
+                    <div class="control-group">
+                        <label for="category-select">Category</label>
+                        <select id="category-select">
+                            <option value="basic">Basic</option>
+                            <option value="semantic">Semantic (WordNet)</option>
+                            <option value="sentiment">Sentiment</option>
+                            <option value="similarity">Similarity</option>
+                            <option value="normalization">Normalization</option>
+                            <option value="advanced">Advanced</option>
+                        </select>
+                    </div>
+
+                    <div class="control-group">
+                        <label for="task-select">Task</label>
+                        <select id="task-select">
+                            <option value="tokenize">Tokenization</option>
+                            <option value="pos_tag">POS Tagging</option>
+                            <option value="ner">Named Entity Recognition</option>
+                            <option value="dependency">Dependency Parsing</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="input-section">
+                <div class="section-header">
+                    <h2>Input</h2>
+                    <div class="examples">
+                        <button class="example-btn" data-example="1">Example 1</button>
+                        <button class="example-btn" data-example="2">Example 2</button>
+                        <button class="example-btn" data-example="3">Example 3</button>
+                    </div>
+                </div>
+
+                <div id="input-container">
+                    <textarea id="text-input"
+                        placeholder="Enter your text here...">Mark is working at Google.</textarea>
+                </div>
+
+                <button id="analyze-btn" class="primary-btn">▶ Run Analysis</button>
+            </div>
+
+            <div class="output-section">
+                <div class="section-header">
+                    <h2>Results</h2>
+                    <div id="result-info" class="result-info"></div>
+                </div>
+                <div id="results" class="results">
+                    <div class="placeholder">
+                        <p>Select a task and click "Run Analysis" to see results</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Panel: Code Display -->
+        <div class="right-panel">
+            <div class="code-section">
+                <div class="code-header">
+                    <h2>Python Code</h2>
+                    <button id="copy-code-btn" class="copy-btn">Copy</button>
+                </div>
+                <div class="code-explanation">
+                    <p id="code-description">The Python code that executes this task will appear here</p>
+                </div>
+                <pre id="code-display"><code>import nltk
+
+# Select a task to see the code
+text = "Your text here"
+tokens = nltk.word_tokenize(text)
+print(tokens)</code></pre>
+            </div>
+        </div>
+    </div>
+
+    <div id="loading" class="loading hidden">
+        <div class="spinner"></div>
+        <p>Processing...</p>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+
+</html>
